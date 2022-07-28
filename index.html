@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+
+        <section class="upper-cont">
+            <h2>Convert your Temperature!</h2>
+
+            <label for="" id="add">Add your temperature </label><br>
+            <input type="number" id="temp"><br>
+
+            <label for="">Convert your temperature to? </label><br>
+            <div class="radio-cont">
+                <div class="container">
+                    <input type="radio"  id="cels" id="coll" value="Celsius" onclick="uncheckf()">
+                    <span class="checkmark"></span>
+                    <label for="">Celsius</label>
+                </div>
+
+                <div class="container">
+                    <input type="radio"  id="faren" id="coll" value="Farenheit" onclick="uncheckc()">
+                    <span class="checkmark"></span>
+                    <label for="">Farenheit</label>
+                </div>
+            </div>
+
+                <button id="clear" onclick="clearText()">Clear</button>
+        </section>    
+            
+                <h4>RESULT</h4><br>
+                <div id="res-btn-cont">
+                    <!-- <h4 id="res-btn">RESULT</h4> -->
+                    <!-- <button id="add-temp">Add Temperature</button> -->
+                    <!-- <img src="/plus-circle-white.png" alt=""> -->
+                    <input type="button" id="add-temp" onclick="myFunction()" value="Add Temperature">
+                
+                    <div id="result" class="result"></div>
+                </div>
+  
+    </form>
+        <!-- <script>
+            document.getElementById('submit').onclick = () => {
+                var name = document.getElementById('name').value;
+                alert('Hello, ' + name);
+            }
+        </script> -->
+        <script>
+
+const clearText = () =>{
+                document.getElementById('faren').checked = false;
+                document.getElementById('cels').checked = false;
+                document.getElementById('temp').value = "";
+            }
+
+            const uncheckf = () =>{
+                document.getElementById('faren').checked = false;
+            }
+
+            const  uncheckc = () =>{
+                document.getElementById('cels').checked = false;
+            }
+
+            function myFunction(){
+                const degreeVal = document.forms[0];
+                let degree = '';
+                    for(let i = 0;i < degreeVal.length; i++){
+                        if(degreeVal[i].checked){
+                            degree = degree+ degreeVal[i].value;
+                            console.log(degree);
+
+                            switch(degree){
+                            case 'Celsius':
+                                
+                                const myTemp = (temp.value - 32) * (5/9);
+                                const myTempc = myTemp.toFixed(2);
+                                console.log(myTempc);
+
+                                const resultc = document.querySelector('#result');
+
+                                const celsCont = document.createElement('div');
+                                celsCont.classList.add('celsCont');
+                                celsCont.textContent = `⦾ Your body temperature is ${myTempc} degree celsius!`;
+
+                                result.appendChild(celsCont);
+
+                                break;
+                            case 'Farenheit':
+                                const myTempf = (temp.value * 9/5) + 32;
+                                console.log(myTempf);
+
+                                const resultf = document.querySelector('#result');
+
+                                const farenCont = document.createElement('div');
+                                farenCont.classList.add('farenCont');
+                                farenCont.textContent = `⦾ Your body temperature is ${myTempf} degree farenheit!`;
+
+                                result.appendChild(farenCont);
+                                break;
+                            default:
+                                console.log('enter something');
+                        }
+                        }
+                    }
+                    
+
+            }
+        </script>
+    <div class="footer">
+        <p>Angelo 2022</p>
+    </div>
+</body>
+</html>
