@@ -59,13 +59,11 @@
         <style>
 
 html{
-    /* background-image: linear-gradient(to bottom right, rgb(204, 29, 29),  rgb(255, 185, 119)) ;
-    
+    /* background-image: linear-gradient(to bottom right, rgb(204, 29, 29),  rgb(255, 185, 119)) ; */
     min-height: 100%;
-    margin: 0; */
-    
+    margin: 0;  
     background-image: url('wallpapersden.com_colorful-3d-layers_3594x2154.webp');
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     
 }
 
@@ -108,6 +106,14 @@ h2 ,h4{
     -webkit-text-fill-color: transparent;
     transition: 0.3s;
 }
+
+h2:hover{
+    background: rgb(255, 0, 0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor:pointer;
+    text-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
 label {
     font-family: tahoma;
     font-size: medium;
@@ -143,7 +149,7 @@ label {
     font-size: small;
     margin-bottom: 25px;
     /* background-color: coral; */
-    background-image: linear-gradient(to bottom, rgb(255, 70, 70), rgb(255, 102, 0));
+    background-image: linear-gradient(to bottom, rgba(255, 70, 70, 0.397), rgba(255, 102, 0, 0.384));
     padding: 20px;
     border-radius: 15px;
     color: azure;
@@ -152,6 +158,9 @@ label {
     flex-direction: column;
     gap: 5px;
     
+    /* background: rgba(255, 228, 196, 0.212); */
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 10px );
 
 }
 
@@ -159,7 +168,7 @@ label {
     font-size: small;
     margin-bottom: 25px;
     /* background-color: coral; */
-    background-image: linear-gradient(to bottom, rgb(255, 159, 70), rgb(241, 144, 18));
+    background-image: linear-gradient(to bottom, rgba(255, 159, 70, 0.356), rgba(241, 144, 18, 0.295));
     padding: 20px;
     border-radius: 15px;
     color: azure;
@@ -167,6 +176,9 @@ label {
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 10px );
 
 }
 section div{
@@ -216,7 +228,7 @@ section div{
 
 #add-temp:hover{
     cursor: pointer;
-    background-color: rgb(236, 208, 173);
+    background-color: rgba(252, 149, 23, 0.438);
     color: rgb(255, 243, 227);
     border-color: rgb(255, 243, 227);
     
@@ -297,9 +309,7 @@ section div{
         flex-direction: column;
     }
 
-    #res-btn-cont{
-        
-    }
+
 
     #add-temp{
         width: 15rem;
