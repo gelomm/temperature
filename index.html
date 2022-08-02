@@ -12,10 +12,10 @@
     <form action="">
 
         <section class="upper-cont">
-            <h2>Convert your Temperature!</h2>
+            <h2>CONVERT YOUR TEMPERATURE</h2>
 
             <label for="" id="add">Add your temperature </label><br>
-            <input type="number" id="temp"><br>
+            <input type="number" id="temp" value=""><br>
 
             <label for="">Convert your temperature to? </label><br>
             <div class="radio-cont">
@@ -55,9 +55,13 @@
         <style>
 
 html{
-    background-image: linear-gradient(to bottom right, rgb(204, 29, 29),  rgb(255, 185, 119)) ;
+    /* background-image: linear-gradient(to bottom right, rgb(204, 29, 29),  rgb(255, 185, 119)) ;
+    
     min-height: 100%;
-    margin: 0;
+    margin: 0; */
+
+    background-image: url(/wallpapersden.com_colorful-3d-layers_3594x2154.webp);
+background-repeat: no-repeat;
     
 }
 
@@ -68,13 +72,13 @@ form{
     justify-content: center;
     align-items: center;
     gap: 1px;
-    margin: 4%;
+    margin: 6rem;
     padding: 2%;
-    background-color: bisque;
     border-radius: 1rem;
     box-shadow: 2px 4px 16px rgba(121, 49, 49, 0.5);
-
-    
+    background: rgba(255, 228, 196, 0.212);
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 10px );
 }
 
 form section{
@@ -90,12 +94,12 @@ form section{
 
     margin-top: -.2rem;
     /* background-color: rgb(250, 199, 165); */
-    background-image: linear-gradient(to bottom, rgb(255, 195, 155),  rgb(255, 174, 98)) ;
+    /* background-image: linear-gradient(to bottom, rgb(255, 195, 155),  rgb(255, 174, 98)) ; */
 }
 
 h2 ,h4{
     font-size: x-large;
-    background: -webkit-linear-gradient(rgb(255, 133, 76), rgb(255, 142, 89));
+    background: -webkit-linear-gradient(rgb(252, 157, 113), rgb(253, 92, 17));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -115,7 +119,7 @@ label {
     font-family: tahoma;
     font-size: medium;
     color: rgb(243, 220, 194);
-    background-color: rgb(230, 155, 84);
+    background-color: rgba(230, 155, 84, 0.377);
     width: 15%;
     padding: 2px;
     border-radius: 5px;
@@ -174,7 +178,7 @@ section div{
     padding: 5px;
     text-align: center;
     border-radius: 5px;
-
+    background-color: rgba(250, 235, 215, 0.979);
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 
@@ -188,12 +192,11 @@ section div{
     font-family: tahoma;
     font-size: medium;
     font-weight: 700;
-    color: rgb(214, 175, 125);
+    color: rgb(250, 247, 243);
     background: none;
     border-style: dashed;
-    border-color: rgb(214, 175, 125);
+    border-color: rgb(250, 247, 243);
     border-radius: 5px;
-    padding: 10px;
     display: flex;
     display: block;
     margin-left: auto;
@@ -201,7 +204,7 @@ section div{
     padding: 20px;
     border-radius: 15px;
     width: 20rem;
-    background-color: rgb(250, 219, 182);
+    background-color: rgba(250, 219, 182, 0.301);
     text-align: center;
     transition: 0.3s;
 }
@@ -211,7 +214,9 @@ section div{
     background-color: rgb(236, 208, 173);
     color: rgb(255, 243, 227);
     border-color: rgb(255, 243, 227);
+    
 }
+
 
 .container input{
     position: absolute;
@@ -269,6 +274,34 @@ section div{
     text-align: center;
 }
 
+@media (max-width: 600px) {
+    form{
+        width: 265px;
+        padding-left: 15%;
+        padding-right: 15%;
+        margin: auto;
+        margin-top: 6rem;
+    }
+    h2, h4{
+        font-size: medium;
+    }
+    .radio-cont{
+        flex-direction: column;
+    }
+
+    #res-btn-cont{
+        
+    }
+
+    #add-temp{
+        width: 15rem;
+    }
+
+    .celsCont, .farenCont{
+        width: 13rem;
+    }
+}
+
 
         </style>
 
@@ -293,10 +326,11 @@ const clearText = () =>{
 
             function myFunction(){
                 const degreeVal = document.forms[0];
+                var numField = document.getElementById('temp');
                 let degree = '';
                     for(let i = 0;i < degreeVal.length; i++){
                         if(degreeVal[i].checked){
-                            degree = degree+ degreeVal[i].value;
+                            degree = degree + degreeVal[i].value;
                             console.log(degree);
 
                             switch(degree){
