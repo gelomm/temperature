@@ -12,7 +12,7 @@
     <form action="">
 
         <section class="upper-cont">
-            <h2>CONVERT YOUR TEMPERATURE</h2>
+            <h2 id="header-title">CONVERT YOUR TEMPERATURE</h2>
 
             <label for="" id="add">Add your temperature </label><br>
             <input type="number" id="temp" value=""><br>
@@ -44,7 +44,7 @@
                 
                     <div id="result" class="result"></div>
                 </div>
-  
+
     </form>
     <div class="footer">
         <p>Angelo 2022</p>
@@ -114,6 +114,11 @@ h2:hover{
     cursor:pointer;
     text-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
+
+
+
+
+
 label {
     font-family: tahoma;
     font-size: medium;
@@ -192,6 +197,7 @@ section div{
 
 #temp{
     border: none;
+    /* border-color: red; */
     padding: 5px;
     text-align: center;
     border-radius: 5px;
@@ -351,7 +357,12 @@ const clearText = () =>{
                             degree = degree + degreeVal[i].value;
                             console.log(degree);
 
-                            switch(degree){
+                            if (temp.value == 0) {
+
+
+                                alert('Please enter your temperature');
+                            }else{
+                                switch(degree){
                             case 'Celsius':
                                 
                                 const myTemp = (temp.value - 32) * (5/9);
@@ -382,6 +393,9 @@ const clearText = () =>{
                             default:
                                 console.log('enter something');
                         }
+                            }
+
+
                         }
                     }
                     
